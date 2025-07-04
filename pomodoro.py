@@ -10,7 +10,7 @@ import math
 class PomodoroTimer:
     def __init__(self, root):
         self.root = root
-        self.root.title("Pomodoro Timer • Task Edition")
+        self.root.title("Pomodoro Timer • Linux Edition")
         self.root.geometry("500x700")
         self.root.minsize(400, 500)  
         self.root.resizable(False, False)

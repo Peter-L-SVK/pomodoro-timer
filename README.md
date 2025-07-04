@@ -55,7 +55,7 @@ python3 pomodoro.py #or ./pomodoro.py
 
 2. **Tasks Tab**:
    - Add new tasks with `Enter task...` placeholder
-   - Set current task (marks as complete)
+   - Set current task
    - Delete tasks
    - View completion statistics
 
