@@ -187,12 +187,9 @@ class PomodoroTimer:
         if selection:
             self.current_task = self.task_list.get(selection)
             self.current_task_label.config(text=f"Current Task: {self.current_task}")
-            # Mark as done when set as current
-            self.task_list.itemconfig(selection, fg="green")
+            # Only change color to indicate it's current (not completed)
+            self.task_list.itemconfig(selection, fg="blue")
             self.save_tasks()
-            
-            # Update completed task count in stats
-            self.update_stats_display()
     
     def delete_task(self):
         selection = self.task_list.curselection()
@@ -321,7 +318,16 @@ class PomodoroTimer:
         if self.current_mode == "Work":
             self.pomodoro_count += 1
             self.counter_label.config(text=f"Pomodoros Completed: {self.pomodoro_count}")
-            
+
+            # Mark current task as completed when work session finishes
+            if self.current_task:
+                for i in range(self.task_list.size()):
+                    if self.task_list.get(i) == self.current_task:
+                        self.task_list.itemconfig(i, fg="green")
+                        break
+                    self.save_tasks()
+                    self.update_stats_display()
+                    
             if self.pomodoro_count % 4 == 0:
                 self.current_mode = "Long Break"
                 self.time_left = self.long_break

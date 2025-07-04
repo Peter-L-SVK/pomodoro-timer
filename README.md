@@ -1,6 +1,6 @@
 # Pomodoro Timer with Task Management
 
-![Pomodoro Timer Screenshot](demo.png) *[demo.png]*
+![Pomodoro Timer Screenshot](demo.png)
 
 A productivity application combining the Pomodoro technique with task management, designed for Linux (Fedora Cinnamon) with a clean, minimalist interface.
 
