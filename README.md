@@ -38,8 +38,11 @@ A productivity application combining the Pomodoro technique with task management
 git clone https://github.com/yourusername/pomodoro-timer.git
 cd pomodoro-timer
 
-# Install dependencies
+# Install dependencies - Fedora
 sudo dnf install python3-tkinter alsa-utils pulseaudio-utils libnotify
+
+#Ubuntu/Mint 
+sudo apt install python3-tk
 
 # Run the application
 python3 pomodoro.py #or ./pomodoro.py
@@ -80,11 +83,18 @@ Choose notification sounds:
 **Sound not working?**
 ```bash
 sudo dnf install alsa-utils pulseaudio-utils
+
+# Ubuntu/Mint
+sudo apt install pulseaudio-utils alsa-utils
 ```
+Note: Note: Ubuntu/Mint typically include PulseAudio by default, but these ensure CLI tools are installed.
 
 **Missing fonts?**
 ```bash
 sudo dnf install google-noto-sans-fonts
+
+#Ubuntu/Mint
+sudo apt install libnotify-bin
 ```
 
 **Window not displaying properly?**
